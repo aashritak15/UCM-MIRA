@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { callGemini } from "../lib/utils";
 
 const AssistantInterface = () => {
   const [messages, setMessages] = useState<string[]>([]);
@@ -10,29 +11,42 @@ const AssistantInterface = () => {
   const speak = (text: string) => {
     const utter = new SpeechSynthesisUtterance(text);
     utter.rate = slowMode ? 0.7 : 1.0;
-    utter.pitch = 0.85; // warm, calm voice
+    utter.pitch = 0.85; 
     window.speechSynthesis.speak(utter);
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
-    setMessages((prev) => [...prev, `🧑‍🦳 You: ${input}`]);
-    speak(input);
+
+    const userMessage = `🧑‍🦳 You: ${input}`;
+    setMessages((prev) => [...prev, userMessage]);
+
+    const geminiReply = await callGemini(input);
+    const assistantMessage = `🤖 MIRA: ${geminiReply}`;
+    setMessages((prev) => [...prev, assistantMessage]);
+
+    speak(geminiReply);
     setInput("");
   };
 
-  const handleVoiceInput = () => {
+  const handleVoiceInput = async () => {
     const recognition = new window.webkitSpeechRecognition(); // for Chrome
     recognition.lang = "en-US";
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
-    recognition.onresult = (event) => {
+    recognition.onresult = async (event) => {
       const spoken = event.results[0][0].transcript;
       const confirmed = window.confirm(`Did you mean: "${spoken}"?`);
       if (confirmed) {
-        setMessages((prev) => [...prev, `🎙️ You (spoken): ${spoken}`]);
-        speak(spoken);
+        const userMsg = `🎙️ You (spoken): ${spoken}`;
+        setMessages((prev) => [...prev, userMsg]);
+
+        const geminiReply = await callGemini(spoken);
+        const assistantMsg = `🤖 MIRA: ${geminiReply}`;
+        setMessages((prev) => [...prev, assistantMsg]);
+
+        speak(geminiReply);
       }
     };
 
