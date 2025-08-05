@@ -16,25 +16,25 @@ const HeroSection = () => {
 
   <div
     className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-red-300 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.4 }}
+    style={{ opacity: 0.6 }}
   ></div>
 
 
   <div
     className="absolute top-[-180px] right-[-200px] w-[500px] h-[500px] bg-orange-200 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.4 }}
+    style={{ opacity: 0.6 }}
   ></div>
 
  
   <div
     className="absolute bottom-[-180px] left-[-200px] w-[500px] h-[500px] bg-orange-200 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.4 }}
+    style={{ opacity: 0.7 }}
   ></div>
 
 
   <div
     className="absolute bottom-[-200px] right-[-180px] w-[500px] h-[500px] bg-red-200 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.5 }}
+    style={{ opacity: 0.7 }}
   ></div>
 </div>
 
