@@ -120,6 +120,10 @@ All colors MUST be HSL.
     text-shadow: var(--mira-text-shadow);
     filter: drop-shadow(var(--mira-glow));
   }
+  .warm-gradient-bg {
+    background: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 100% 65%), hsl(45 93% 58%));
+  }
+  
   
   .mira-gradient-bg {
     background: var(--mira-gradient);
