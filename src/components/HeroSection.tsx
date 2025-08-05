@@ -15,20 +15,20 @@ const HeroSection = () => {
       <div className="absolute inset-0 pointer-events-none z-0">
 
   <div
-    className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-orange-300 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.5 }}
+    className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-red-300 rounded-full filter blur-[120px]"
+    style={{ opacity: 0.4 }}
   ></div>
 
 
   <div
-    className="absolute top-[-180px] right-[-200px] w-[500px] h-[500px] bg-orange-100 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.7 }}
+    className="absolute top-[-180px] right-[-200px] w-[500px] h-[500px] bg-orange-200 rounded-full filter blur-[120px]"
+    style={{ opacity: 0.4 }}
   ></div>
 
  
   <div
-    className="absolute bottom-[-180px] left-[-200px] w-[500px] h-[500px] bg-orange-100 rounded-full filter blur-[120px]"
-    style={{ opacity: 0.7 }}
+    className="absolute bottom-[-180px] left-[-200px] w-[500px] h-[500px] bg-orange-200 rounded-full filter blur-[120px]"
+    style={{ opacity: 0.4 }}
   ></div>
 
 
@@ -45,7 +45,7 @@ const HeroSection = () => {
           Hello there! Welcome to
         </h1>
 
-        <h2 className="text-8xl md:text-9xl lg:text-[12rem] font-extrabold tracking-tight mira-gradient-text leading-none">
+        <h2 className="text-8xl md:text-9xl lg:text-[12rem] font-bold tracking-tight mira-gradient-text leading-none">
           MIRA
         </h2>
 

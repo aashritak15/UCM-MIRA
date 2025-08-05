@@ -24,9 +24,11 @@ All colors MUST be HSL.
     --secondary-foreground: 220 15% 15%;
 
     /* MIRA Brand Colors */
-    --mira-orange: 25 95% 53%;
-    --mira-yellow: 45 93% 58%;
-    --mira-gradient: linear-gradient(135deg, hsl(var(--mira-orange)), hsl(var(--mira-yellow)));
+    --mira-red: 10 90% 60%;
+    --mira-orange: 25 95% 60%;
+    --mira-pink: 340 85% 65%;
+    --mira-gradient: linear-gradient(135deg, hsl(var(--mira-red)), hsl(var(--mira-orange)), hsl(var(--mira-pink)));
+    
     --mira-glow: 0 0 40px hsl(var(--mira-orange) / 0.3);
     --mira-text-shadow: 0 0 20px hsl(var(--mira-orange) / 0.5);
 
